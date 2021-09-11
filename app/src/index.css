@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@100&display=swap");
+
+* {
+  font-family: "Urbanist", sans-serif;
+}
+
+App {
+  display: flex;
+  flex-direction: row;
+}
+
+.users {
+  width: 50%;
+  height: 100vh;
+  margin: 5px;
+  padding: 5px;
+}
+
+.events {
+  width: 50%;
+  margin: 5px;
+  padding: 5px;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  margin: 5px;
+}
