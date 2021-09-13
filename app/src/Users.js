@@ -19,6 +19,7 @@ const Users = () => {
 
     event.preventDefault();
     apiClient.addUser({ username, email }).then(getUsers);
+    [...event.currentTarget.elements].map((element) => (element.value = ""));
   };
   const deleteUser = (id) => apiClient.deleteUser(id).then(getUsers);
 
@@ -36,11 +37,13 @@ const Users = () => {
         <button>Add user</button>
       </form>
       <ul>
-        {users.map((user) => {
+        {users.map(({ id, username }) => {
           return (
             <>
-              <li key={user.username}>{user.username}</li>
-              <button onClick={() => deleteUser(user.id)}>Delete</button>
+              <li key={id}>
+                {username}: {id}
+              </li>
+              <button onClick={() => deleteUser(id)}>Delete</button>
             </>
           );
         })}
